@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA-origins
-Thu Dec 11 23:54:03 2014
+Sun Dec 14 22:33:41 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,16 +13,21 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "ula_overflow:ula7"
- 10. Port Connectivity Checks: "ula_1b:ula6"
- 11. Port Connectivity Checks: "ula_1b:ula5"
- 12. Port Connectivity Checks: "ula_1b:ula4"
- 13. Port Connectivity Checks: "ula_1b:ula3"
- 14. Port Connectivity Checks: "ula_1b:ula2"
- 15. Port Connectivity Checks: "ula_1b:ula1"
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  8. State Machine - |machine_of_destiny|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |machine_of_destiny
+ 13. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_overflow:ula7"
+ 14. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula6"
+ 15. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula5"
+ 16. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula4"
+ 17. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula3"
+ 18. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula2"
+ 19. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula1"
+ 20. Port Connectivity Checks: "ula_of_infinity:ula_of_destiny"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +53,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 11 23:54:03 2014            ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 14 22:33:41 2014            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ULA-origins                                      ;
-; Top-level Entity Name              ; ula_of_infinity                                  ;
+; Top-level Entity Name              ; machine_of_destiny                               ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 49                                               ;
-;     Total combinational functions  ; 49                                               ;
-;     Dedicated logic registers      ; 0                                                ;
-; Total registers                    ; 0                                                ;
-; Total pins                         ; 31                                               ;
+; Total logic elements               ; 74                                               ;
+;     Total combinational functions  ; 72                                               ;
+;     Dedicated logic registers      ; 4                                                ;
+; Total registers                    ; 4                                                ;
+; Total pins                         ; 43                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -71,7 +76,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; ula_of_infinity    ; ULA-origins        ;
+; Top-level entity name                                                      ; machine_of_destiny ; ULA-origins        ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -167,108 +172,167 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; ula_1b.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/ula_1b.v          ;         ;
-; adder_1b.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/adder_1b.v        ;         ;
-; mux2_1b.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/mux2_1b.v         ;         ;
-; mux4_1b.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/mux4_1b.v         ;         ;
-; overflow_1b.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/overflow_1b.v     ;         ;
-; ula_overflow.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/ula_overflow.v    ;         ;
-; ula_of_infinity.v                ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/ula_of_infinity.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; machine_of_destiny.v             ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/machine_of_destiny.v ;         ;
+; ula_1b.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/ula_1b.v             ;         ;
+; adder_1b.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/adder_1b.v           ;         ;
+; mux2_1b.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/mux2_1b.v            ;         ;
+; mux4_1b.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/mux4_1b.v            ;         ;
+; overflow_1b.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/overflow_1b.v        ;         ;
+; ula_overflow.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/ula_overflow.v       ;         ;
+; ula_of_infinity.v                ; yes             ; User Verilog HDL File  ; C:/Users/Luís/Documents/UFAL/sistemas/ULA-origins/ula_of_infinity.v    ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 49    ;
-;                                             ;       ;
-; Total combinational functions               ; 49    ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 25    ;
-;     -- 3 input functions                    ; 9     ;
-;     -- <=2 input functions                  ; 15    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 42    ;
-;     -- arithmetic mode                      ; 7     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 31    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; op[3] ;
-; Maximum fan-out                             ; 19    ;
-; Total fan-out                               ; 166   ;
-; Average fan-out                             ; 2.08  ;
-+---------------------------------------------+-------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 74                   ;
+;                                             ;                      ;
+; Total combinational functions               ; 72                   ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 22                   ;
+;     -- 3 input functions                    ; 36                   ;
+;     -- <=2 input functions                  ; 14                   ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 65                   ;
+;     -- arithmetic mode                      ; 7                    ;
+;                                             ;                      ;
+; Total registers                             ; 4                    ;
+;     -- Dedicated logic registers            ; 4                    ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 43                   ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+; Maximum fan-out node                        ; out_operand[3]$latch ;
+; Maximum fan-out                             ; 19                   ;
+; Total fan-out                               ; 260                  ;
+; Average fan-out                             ; 2.18                 ;
++---------------------------------------------+----------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
-+--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Library Name ;
-+--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+--------------+
-; |ula_of_infinity                     ; 49 (4)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |ula_of_infinity                                                ; work         ;
-;    |ula_1b:ula0|                     ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0                                    ; work         ;
-;       |adder_1b:adder|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0|adder_1b:adder                     ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M2|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0|mux4_1b:mux|mux2_1b:M2             ; work         ;
-;          |mux2_1b:M3|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula0|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_1b:ula1|                     ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula1                                    ; work         ;
-;       |adder_1b:adder|               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula1|adder_1b:adder                     ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula1|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula1|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula1|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula1|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_1b:ula2|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula2                                    ; work         ;
-;       |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula2|mux2_1b:mux_ainvert                ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula2|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula2|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula2|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula2|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_1b:ula3|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula3                                    ; work         ;
-;       |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula3|mux2_1b:mux_ainvert                ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula3|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula3|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula3|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula3|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_1b:ula4|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula4                                    ; work         ;
-;       |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula4|mux2_1b:mux_ainvert                ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula4|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula4|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula4|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula4|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_1b:ula5|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula5                                    ; work         ;
-;       |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula5|mux2_1b:mux_ainvert                ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula5|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula5|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula5|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula5|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_1b:ula6|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula6                                    ; work         ;
-;       |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula6|mux2_1b:mux_ainvert                ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula6|mux2_1b:mux_binvert                ; work         ;
-;       |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula6|mux4_1b:mux                        ; work         ;
-;          |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula6|mux4_1b:mux|mux2_1b:M1             ; work         ;
-;          |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_1b:ula6|mux4_1b:mux|mux2_1b:M3             ; work         ;
-;    |ula_overflow:ula7|               ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_overflow:ula7                              ; work         ;
-;       |adder_1b:adder|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_overflow:ula7|adder_1b:adder               ; work         ;
-;       |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_overflow:ula7|mux2_1b:mux_binvert          ; work         ;
-;       |mux4_1b:mux|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_overflow:ula7|mux4_1b:mux                  ; work         ;
-;          |mux2_1b:M3|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M3       ; work         ;
-;       |overflow_1b:overflow_origins| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_of_infinity|ula_overflow:ula7|overflow_1b:overflow_origins ; work         ;
-+--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+; |machine_of_destiny                     ; 72 (30)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 43   ; 0            ; |machine_of_destiny                                                                               ; work         ;
+;    |ula_of_infinity:ula_of_destiny|     ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny                                                ; work         ;
+;       |ula_1b:ula0|                     ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0                                    ; work         ;
+;          |adder_1b:adder|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|adder_1b:adder                     ; work         ;
+;          |mux4_1b:mux|                  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M3|                ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_1b:ula1|                     ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1                                    ; work         ;
+;          |adder_1b:adder|               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|adder_1b:adder                     ; work         ;
+;          |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux2_1b:mux_binvert                ; work         ;
+;          |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M1             ; work         ;
+;             |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_1b:ula2|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2                                    ; work         ;
+;          |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux2_1b:mux_ainvert                ; work         ;
+;          |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux2_1b:mux_binvert                ; work         ;
+;          |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M1             ; work         ;
+;             |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_1b:ula3|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3                                    ; work         ;
+;          |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux2_1b:mux_ainvert                ; work         ;
+;          |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux2_1b:mux_binvert                ; work         ;
+;          |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M1             ; work         ;
+;             |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_1b:ula4|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4                                    ; work         ;
+;          |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux2_1b:mux_ainvert                ; work         ;
+;          |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux2_1b:mux_binvert                ; work         ;
+;          |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M1             ; work         ;
+;             |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_1b:ula5|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5                                    ; work         ;
+;          |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux2_1b:mux_ainvert                ; work         ;
+;          |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux2_1b:mux_binvert                ; work         ;
+;          |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M1             ; work         ;
+;             |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_1b:ula6|                     ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6                                    ; work         ;
+;          |mux2_1b:mux_ainvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux2_1b:mux_ainvert                ; work         ;
+;          |mux2_1b:mux_binvert|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux2_1b:mux_binvert                ; work         ;
+;          |mux4_1b:mux|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux                        ; work         ;
+;             |mux2_1b:M1|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M1             ; work         ;
+;             |mux2_1b:M3|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M3             ; work         ;
+;       |ula_overflow:ula7|               ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7                              ; work         ;
+;          |mux4_1b:mux|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux                  ; work         ;
+;             |mux2_1b:M3|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M3       ; work         ;
+;          |overflow_1b:overflow_origins| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|overflow_1b:overflow_origins ; work         ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------+
+; State Machine - |machine_of_destiny|state            ;
++----------+----------+----------+----------+----------+
+; Name     ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++----------+----------+----------+----------+----------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ;
+; state.S1 ; 0        ; 0        ; 1        ; 1        ;
+; state.S2 ; 0        ; 1        ; 0        ; 1        ;
+; state.S3 ; 1        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; out_a[0]$latch                                      ; state.S0            ; yes                    ;
+; out_a[1]$latch                                      ; state.S0            ; yes                    ;
+; out_a[2]$latch                                      ; state.S0            ; yes                    ;
+; out_a[3]$latch                                      ; state.S0            ; yes                    ;
+; out_a[4]$latch                                      ; state.S0            ; yes                    ;
+; out_a[5]$latch                                      ; state.S0            ; yes                    ;
+; out_a[6]$latch                                      ; state.S0            ; yes                    ;
+; out_a[7]$latch                                      ; state.S0            ; yes                    ;
+; out_b[0]$latch                                      ; state.S1            ; yes                    ;
+; out_b[1]$latch                                      ; state.S1            ; yes                    ;
+; out_b[2]$latch                                      ; state.S1            ; yes                    ;
+; out_b[3]$latch                                      ; state.S1            ; yes                    ;
+; out_b[4]$latch                                      ; state.S1            ; yes                    ;
+; out_b[5]$latch                                      ; state.S1            ; yes                    ;
+; out_b[6]$latch                                      ; state.S1            ; yes                    ;
+; out_b[7]$latch                                      ; state.S1            ; yes                    ;
+; out_operand[0]$latch                                ; state.S2            ; yes                    ;
+; out_operand[1]$latch                                ; state.S2            ; yes                    ;
+; out_operand[2]$latch                                ; state.S2            ; yes                    ;
+; out_operand[3]$latch                                ; state.S2            ; yes                    ;
+; result[0]$latch                                     ; state.S3            ; yes                    ;
+; result[1]$latch                                     ; state.S3            ; yes                    ;
+; result[2]$latch                                     ; state.S3            ; yes                    ;
+; result[3]$latch                                     ; state.S3            ; yes                    ;
+; result[4]$latch                                     ; state.S3            ; yes                    ;
+; result[5]$latch                                     ; state.S3            ; yes                    ;
+; result[6]$latch                                     ; state.S3            ; yes                    ;
+; result[7]$latch                                     ; state.S3            ; yes                    ;
+; Number of user-specified and inferred latches = 28  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~4                               ; Lost fanout        ;
+; state~5                               ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -276,77 +340,102 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------+
-; Port Connectivity Checks: "ula_overflow:ula7" ;
-+------+-------+----------+---------------------+
-; Port ; Type  ; Severity ; Details             ;
-+------+-------+----------+---------------------+
-; less ; Input ; Info     ; Stuck at GND        ;
-+------+-------+----------+---------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |machine_of_destiny ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; S0             ; 0     ; Signed Integer                                            ;
+; S1             ; 1     ; Signed Integer                                            ;
+; S2             ; 2     ; Signed Integer                                            ;
+; S3             ; 3     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "ula_1b:ula6" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; less ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_overflow:ula7" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "ula_1b:ula5" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; less ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula6" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "ula_1b:ula4" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; less ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula5" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "ula_1b:ula3" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; less ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula4" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "ula_1b:ula2" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; less ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula3" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
 
 
-+-----------------------------------------+
-; Port Connectivity Checks: "ula_1b:ula1" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; less ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula2" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny|ula_1b:ula1" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; less ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_of_infinity:ula_of_destiny"                                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; op       ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; zero     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -354,7 +443,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -364,9 +453,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Dec 11 23:54:01 2014
+    Info: Processing started: Sun Dec 14 22:33:33 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA-origins -c ULA-origins
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file machine_of_destiny.v
+    Info (12023): Found entity 1: machine_of_destiny
 Info (12021): Found 1 design units, including 1 entities, in source file ula_1b.v
     Info (12023): Found entity 1: ula_1b
 Info (12021): Found 1 design units, including 1 entities, in source file adder_1b.v
@@ -381,23 +472,73 @@ Info (12021): Found 1 design units, including 1 entities, in source file ula_ove
     Info (12023): Found entity 1: ula_overflow
 Info (12021): Found 1 design units, including 1 entities, in source file ula_of_infinity.v
     Info (12023): Found entity 1: ula_of_infinity
-Info (12127): Elaborating entity "ula_of_infinity" for the top level hierarchy
-Info (12128): Elaborating entity "ula_1b" for hierarchy "ula_1b:ula0"
-Info (12128): Elaborating entity "mux2_1b" for hierarchy "ula_1b:ula0|mux2_1b:mux_ainvert"
-Info (12128): Elaborating entity "adder_1b" for hierarchy "ula_1b:ula0|adder_1b:adder"
-Info (12128): Elaborating entity "mux4_1b" for hierarchy "ula_1b:ula0|mux4_1b:mux"
-Info (12128): Elaborating entity "ula_overflow" for hierarchy "ula_overflow:ula7"
-Info (12128): Elaborating entity "overflow_1b" for hierarchy "ula_overflow:ula7|overflow_1b:overflow_origins"
+Info (12127): Elaborating entity "machine_of_destiny" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at machine_of_destiny.v(38): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at machine_of_destiny.v(40): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at machine_of_destiny.v(42): variable "data_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at machine_of_destiny.v(44): variable "wire_result" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at machine_of_destiny.v(35): inferring latch(es) for variable "out_a", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at machine_of_destiny.v(35): inferring latch(es) for variable "out_b", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at machine_of_destiny.v(35): inferring latch(es) for variable "out_operand", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at machine_of_destiny.v(35): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "result[0]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[1]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[2]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[3]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[4]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[5]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[6]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "result[7]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[0]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[1]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[2]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[3]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[4]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[5]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[6]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_operand[7]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[0]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[1]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[2]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[3]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[4]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[5]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[6]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_b[7]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[0]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[1]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[2]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[3]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[4]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[5]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[6]" at machine_of_destiny.v(35)
+Info (10041): Inferred latch for "out_a[7]" at machine_of_destiny.v(35)
+Info (12128): Elaborating entity "ula_of_infinity" for hierarchy "ula_of_infinity:ula_of_destiny"
+Info (12128): Elaborating entity "ula_1b" for hierarchy "ula_of_infinity:ula_of_destiny|ula_1b:ula0"
+Info (12128): Elaborating entity "mux2_1b" for hierarchy "ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux2_1b:mux_ainvert"
+Info (12128): Elaborating entity "adder_1b" for hierarchy "ula_of_infinity:ula_of_destiny|ula_1b:ula0|adder_1b:adder"
+Info (12128): Elaborating entity "mux4_1b" for hierarchy "ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux"
+Info (12128): Elaborating entity "ula_overflow" for hierarchy "ula_of_infinity:ula_of_destiny|ula_overflow:ula7"
+Info (12128): Elaborating entity "overflow_1b" for hierarchy "ula_of_infinity:ula_of_destiny|ula_overflow:ula7|overflow_1b:overflow_origins"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out_operand[4]" is stuck at GND
+    Warning (13410): Pin "out_operand[5]" is stuck at GND
+    Warning (13410): Pin "out_operand[6]" is stuck at GND
+    Warning (13410): Pin "out_operand[7]" is stuck at GND
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 80 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 49 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 459 megabytes
-    Info: Processing ended: Thu Dec 11 23:54:03 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 117 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 74 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 454 megabytes
+    Info: Processing ended: Sun Dec 14 22:33:42 2014
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
 
 
