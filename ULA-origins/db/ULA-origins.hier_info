@@ -1,51 +1,26 @@
-|machine_of_destiny
-clk => ~NO_FANOUT~
+|test_machine
 reset => state~3.DATAIN
 enter => state~1.DATAIN
-data_in[0] => out_operand[0]$latch.DATAIN
-data_in[0] => out_b[0]$latch.DATAIN
-data_in[0] => out_a[0]$latch.DATAIN
-data_in[1] => out_operand[1]$latch.DATAIN
-data_in[1] => out_b[1]$latch.DATAIN
-data_in[1] => out_a[1]$latch.DATAIN
-data_in[2] => out_operand[2]$latch.DATAIN
-data_in[2] => out_b[2]$latch.DATAIN
-data_in[2] => out_a[2]$latch.DATAIN
-data_in[3] => out_operand[3]$latch.DATAIN
-data_in[3] => out_b[3]$latch.DATAIN
-data_in[3] => out_a[3]$latch.DATAIN
-data_in[4] => out_b[4]$latch.DATAIN
-data_in[4] => out_a[4]$latch.DATAIN
-data_in[5] => out_b[5]$latch.DATAIN
-data_in[5] => out_a[5]$latch.DATAIN
-data_in[6] => out_b[6]$latch.DATAIN
-data_in[6] => out_a[6]$latch.DATAIN
-data_in[7] => out_b[7]$latch.DATAIN
-data_in[7] => out_a[7]$latch.DATAIN
-out_a[0] <= out_a[0].DB_MAX_OUTPUT_PORT_TYPE
-out_a[1] <= out_a[1].DB_MAX_OUTPUT_PORT_TYPE
-out_a[2] <= out_a[2].DB_MAX_OUTPUT_PORT_TYPE
-out_a[3] <= out_a[3].DB_MAX_OUTPUT_PORT_TYPE
-out_a[4] <= out_a[4].DB_MAX_OUTPUT_PORT_TYPE
-out_a[5] <= out_a[5].DB_MAX_OUTPUT_PORT_TYPE
-out_a[6] <= out_a[6].DB_MAX_OUTPUT_PORT_TYPE
-out_a[7] <= out_a[7].DB_MAX_OUTPUT_PORT_TYPE
-out_b[0] <= out_b[0].DB_MAX_OUTPUT_PORT_TYPE
-out_b[1] <= out_b[1].DB_MAX_OUTPUT_PORT_TYPE
-out_b[2] <= out_b[2].DB_MAX_OUTPUT_PORT_TYPE
-out_b[3] <= out_b[3].DB_MAX_OUTPUT_PORT_TYPE
-out_b[4] <= out_b[4].DB_MAX_OUTPUT_PORT_TYPE
-out_b[5] <= out_b[5].DB_MAX_OUTPUT_PORT_TYPE
-out_b[6] <= out_b[6].DB_MAX_OUTPUT_PORT_TYPE
-out_b[7] <= out_b[7].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[0] <= out_operand[0].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[1] <= out_operand[1].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[2] <= out_operand[2].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[3] <= out_operand[3].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[4] <= out_operand[4].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[5] <= out_operand[5].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[6] <= out_operand[6].DB_MAX_OUTPUT_PORT_TYPE
-out_operand[7] <= out_operand[7].DB_MAX_OUTPUT_PORT_TYPE
+data_in[0] => reg_op[0].DATAIN
+data_in[0] => reg_b[0].DATAIN
+data_in[0] => reg_a[0].DATAIN
+data_in[1] => reg_op[1].DATAIN
+data_in[1] => reg_b[1].DATAIN
+data_in[1] => reg_a[1].DATAIN
+data_in[2] => reg_op[2].DATAIN
+data_in[2] => reg_b[2].DATAIN
+data_in[2] => reg_a[2].DATAIN
+data_in[3] => reg_op[3].DATAIN
+data_in[3] => reg_b[3].DATAIN
+data_in[3] => reg_a[3].DATAIN
+data_in[4] => reg_b[4].DATAIN
+data_in[4] => reg_a[4].DATAIN
+data_in[5] => reg_b[5].DATAIN
+data_in[5] => reg_a[5].DATAIN
+data_in[6] => reg_b[6].DATAIN
+data_in[6] => reg_a[6].DATAIN
+data_in[7] => reg_b[7].DATAIN
+data_in[7] => reg_a[7].DATAIN
 result[0] <= result[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 result[1] <= result[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 result[2] <= result[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -56,7 +31,7 @@ result[6] <= result[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= result[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny
+|test_machine|ula_of_infinity:ula_of_destiny
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -90,7 +65,7 @@ overflow <= ula_overflow:ula7.port10
 zero <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -103,7 +78,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -111,7 +86,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -119,7 +94,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -142,7 +117,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -152,7 +127,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -160,7 +135,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -168,7 +143,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula0|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -176,7 +151,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -189,7 +164,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -197,7 +172,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -205,7 +180,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -228,7 +203,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -238,7 +213,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -246,7 +221,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -254,7 +229,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula1|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -262,7 +237,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -275,7 +250,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -283,7 +258,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -291,7 +266,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -314,7 +289,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -324,7 +299,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -332,7 +307,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -340,7 +315,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula2|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -348,7 +323,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -361,7 +336,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -369,7 +344,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -377,7 +352,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -400,7 +375,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -410,7 +385,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -418,7 +393,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -426,7 +401,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula3|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -434,7 +409,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -447,7 +422,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -455,7 +430,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -463,7 +438,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -486,7 +461,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -496,7 +471,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -504,7 +479,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -512,7 +487,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula4|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -520,7 +495,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -533,7 +508,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -541,7 +516,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -549,7 +524,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -572,7 +547,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -582,7 +557,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -590,7 +565,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -598,7 +573,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula5|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -606,7 +581,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -619,7 +594,7 @@ cout <= adder_1b:adder.port3
 result <= mux4_1b:mux.port0
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -627,7 +602,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -635,7 +610,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -658,7 +633,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -668,7 +643,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -676,7 +651,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -684,7 +659,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_1b:ula6|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -692,7 +667,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7
 a => a.IN1
 b => b.IN1
 less => less.IN1
@@ -707,7 +682,7 @@ set <= overflow_1b:overflow_origins.port3
 overflow <= overflow_1b:overflow_origins.port4
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux2_1b:mux_binvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux2_1b:mux_binvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -715,7 +690,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux2_1b:mux_ainvert
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux2_1b:mux_ainvert
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -723,7 +698,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|adder_1b:adder
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|adder_1b:adder
 a => and_cout2.IN0
 a => and_cout3.IN0
 a => and_sum1.IN0
@@ -746,7 +721,7 @@ cout <= cout_or.DB_MAX_OUTPUT_PORT_TYPE
 sum <= big_or.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|overflow_1b:overflow_origins
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|overflow_1b:overflow_origins
 cin => xo1.IN0
 cout => xo1.IN1
 sum => xo2.IN1
@@ -754,7 +729,7 @@ set <= xo2.DB_MAX_OUTPUT_PORT_TYPE
 overflow <= xo1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux
 out <= mux2_1b:M3.port0
 a => a.IN1
 b => b.IN1
@@ -764,7 +739,7 @@ sel[0] => sel[0].IN2
 sel[1] => sel[1].IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M1
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M1
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -772,7 +747,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M2
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M2
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0
@@ -780,7 +755,7 @@ sel => and_a.IN1
 sel => and_b.IN1
 
 
-|machine_of_destiny|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M3
+|test_machine|ula_of_infinity:ula_of_destiny|ula_overflow:ula7|mux4_1b:mux|mux2_1b:M3
 out <= or_final.DB_MAX_OUTPUT_PORT_TYPE
 a => and_b.IN0
 b => and_a.IN0

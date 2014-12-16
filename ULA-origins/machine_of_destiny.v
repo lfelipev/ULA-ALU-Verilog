@@ -7,7 +7,7 @@
 //http://www.altera.com/support/examples/verilog/ver-state-machine.html 
 
 //Basicamente essa é a calculadora
-
+/*
 module machine_of_destiny (clk, reset, enter, data_in, out_a, out_b, out_operand, result);
 	input	clk, reset, enter;
 	input [7:0] data_in;
@@ -45,25 +45,6 @@ module machine_of_destiny (clk, reset, enter, data_in, out_a, out_b, out_operand
 			endcase
 	end
 	
-	/*always @ (state) begin
-		case (state)
-			S0:
-				reg_b = 8'b00000000;
-			S1:
-				reg_b = data_in;
-			S3:
-				out_b = reg_b;
-		endcase
-	end
-	
-	always @ (state) begin
-		case (state)
-			S3:
-				out_operand = reg_op[3:0];
-		endcase
-	end */
-	
-	
 	// Determine the next state
 	always @ (posedge enter or posedge reset) begin
 		if (reset)
@@ -71,18 +52,14 @@ module machine_of_destiny (clk, reset, enter, data_in, out_a, out_b, out_operand
 		else
 			case (state)
 				S0:
-					//if(enter == 1)
-						state <= S1;
+					state <= S1;
 				S1:
-					//if (enter == 1)
-						state <= S2;
+					state <= S2;
 				S2:
-					//if (enter == 1)
-						state <= S3;
+					state <= S3;
 				S3:
-					//if (enter == 1)
-						state <= S0;
+					state <= S0;
 			endcase
 	end
 	
-endmodule
+endmodule */

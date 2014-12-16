@@ -1,5 +1,5 @@
 
-State Machine - |machine_of_destiny|state
+State Machine - |test_machine|state
 Name state.S3 state.S2 state.S1 state.S0 
 state.S0 0 0 0 0 
 state.S1 0 0 1 1 
